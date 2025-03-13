@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Biểu tượng chế độ sáng -->
+    <ImageButton
+        android:id="@+id/btnTheme"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/sun"
+        android:scaleType="centerInside"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMargin="16dp"/>
+
+    <!-- Tiêu đề ứng dụng -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery Savior"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2196FF"
+        app:layout_constraintTop_toBottomOf="@id/btnTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <!-- Phần trăm pin -->
+
+    <TextView
+        android:id="@+id/tvBatteryPercentLabel"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:textAlignment="textEnd"
+        android:text="Phần trăm pin hiện tại:"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="900"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginStart="-180dp"
+        android:layout_marginTop="28dp"/>
+
+    <TextView
+        android:id="@+id/tvBatteryPercent"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:background="@drawable/border_battery"
+        android:padding="0dp"
+        android:text="80%"
+        android:textColor="@android:color/white"
+        android:textSize="14dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvBatteryPercentLabel"
+        app:layout_constraintTop_toTopOf="@id/tvBatteryPercentLabel" />
+
+
+    <!-- Tình trạng pin -->
+
+    <TextView
+        android:id="@+id/tvBatteryStatusLabel"
+        android:layout_width="200dp"
+        android:layout_height="25"
+        android:gravity="center"
+        android:textAlignment="textEnd"
+        android:text="Tình trạng pin hiện tại:"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvBatteryPercent"
+        app:layout_constraintStart_toStartOf="@id/tvBatteryPercentLabel"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvBatteryStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="25"
+        android:gravity="center"
+        android:text="Đang tính toán..."
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@id/tvBatteryStatusLabel"
+        app:layout_constraintStart_toEndOf="@id/tvBatteryStatusLabel"
+        android:layout_marginStart="15dp"/>
+
+    <!-- Thời gian sử dụng còn lại -->
+    <TextView
+        android:id="@+id/tvBatteryTimeLabel"
+        android:layout_width="200dp"
+        android:layout_height="25"
+        android:gravity="center"
+        android:textAlignment="textEnd"
+        android:text="Thời gian sử dụng còn lại:"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvBatteryStatusLabel"
+        app:layout_constraintStart_toStartOf="@id/tvBatteryPercentLabel" />
+
+    <TextView
+        android:id="@+id/tvBatteryTime"
+        android:layout_width="wrap_content"
+        android:layout_height="25"
+        android:gravity="center"
+        android:text="Đang tính toán..."
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@id/tvBatteryTimeLabel"
+        app:layout_constraintStart_toEndOf="@id/tvBatteryTimeLabel"
+        android:layout_marginStart="15dp"/>
+
+    <!-- Chế độ CPU -->
+    <TextView
+        android:id="@+id/tvCpuModeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chế độ CPU"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2196FF"
+        app:layout_constraintTop_toBottomOf="@id/tvBatteryTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvCpuModeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <!-- Turbo Mode -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_turbo"
+                android:contentDescription="Turbo Icon"
+                android:tint="@color/blue"/>
+
+            <TextView
+                android:id="@+id/tvTurbo"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Turbo"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:padding="8dp"
+                android:background="@drawable/border_battery"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Eco Mode -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="24dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_eco"
+                android:contentDescription="Eco Icon"
+                android:tint="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tvEco"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Eco"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Custom Mode -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="24dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_custom"
+                android:contentDescription="Custom Icon"
+                android:tint="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tvCustom"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Custom"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Thanh chọn ngưỡng pin cảnh báo -->
+    <SeekBar
+        android:id="@+id/seekBarBattery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCpuModeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp"
+        android:progress="50"/>
+
+    <!-- Nút chọn âm báo -->
+    <Button
+        android:id="@+id/btnSelectSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chọn âm báo..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBarBattery" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
